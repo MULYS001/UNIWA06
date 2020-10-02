@@ -1,0 +1,30 @@
+
+.container {
+  padding: 10px;
+  margin-left: 10px;
+  height: 100%;
+  width: 100%;
+}
+
+
+.five-day {
+  margin: 15px;
+  padding-left: 15px;
+}
+
+.low {
+  background-color: green; 
+}
+
+.moderate {
+  background-color: yellow;
+}
+
+.high {
+  background-color: orange;
+}
+
+.very-high {
+  background-color: red;
+}
+

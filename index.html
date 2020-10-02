@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/style.css" />
+  <title>Weather Dashboard</title>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <!-- <nav class="navbar fixed-top navbar-dark bg-dark">
+        <h1 class="navbar-text ml-auto mr-auto text-light">Weather Dashboard</h1>
+    </nav> -->
+  <nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1 mx-auto">
+      <h1>Weather Dashboard</h1>
+    </span>
+  </nav>
+  <!-- Main Container -->
+
+  <div class="container-fluid">
+    <!--Row-->
+    <div class="row">
+      <!--Search Sidebar (Column 1)-->
+      <aside class="col-4 search-sidebar">
+        <h3>Search for a City:</h3>
+        <form class="form-inline">
+          <input type="text" class="form-control" id="search-term"></input>
+          <button class="btn btn-outline-primary my-sm" type="submit" id=searchBtn>
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </form>
+
+        <h5 class="justify-content-center pt-2 pl-3">Your previously searched cities: </h5>
+        <div class="container my-3 col-12" id="searched_cities_container">
+        </div>
+      </aside>
+      <div class="col-8">
+        <div class="today col-12">
+          <div class="bg-light">
+            <h2 class="justify-content-center text-dark" id="cityName"></h2> 
+            <div class="row">
+              <div class="col-9">
+                <p id="todayTemp"></p>
+                <p id="todayHumid"></p>
+                <p id="todayWind"></p>
+                <span id="todayUV"></span>
+               </br>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="five-day bg-light">
+          <div class="bg-light">
+            <h5 class="text-dark">Five Day Weather Forecast:</h5>
+          </div>
+          <div class="row justify-content-center">
+            <div id="day0" class="card-body mx-2 my-2">
+              <h5 id="0date"></h5>
+              <p id="0five_day_temp"></p>
+              <p id="0five_day_humidity"></p>
+              <img id="0five_day_icon" src="">
+            </div>
+            <div id="day1" class="card-body mx-2 my-2">
+              <h5 id="1date"></h5>
+              <p id="1five_day_temp"></p>
+              <p id="1five_day_humidity"></p>
+              <img id="1five_day_icon" src="">
+            </div>
+            <div id="day2" class="card-body mx-2 my-2">
+              <h5 id="2date"></h5>
+              <p id="2five_day_temp"></p>
+              <p id="2five_day_humidity"></p>
+              <img id="2five_day_icon" src="">
+            </div>
+            <div id="day3" class="card-body mx-2 my-2">
+              <h5 id="3date"></h5>
+              <p id="3five_day_temp"></p>
+              <p id="3five_day_humidity"></p>
+              <img id="3five_day_icon" src="">
+            </div>
+            <div id="day4" class="card-body mx-2 my-2">
+              <h5 id="4date"></h5>
+              <p id="4five_day_temp"></p>
+              <p id="4five_day_humidity"></p>
+              <img id="4five_day_icon" src="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Linking JQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <!-- Linking moment js -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <!-- Linking my script file -->
+  <script src="script.js"></script>
+
+
+  </script>
+</body>
+
+</html>
