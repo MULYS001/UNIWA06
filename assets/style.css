@@ -14,17 +14,40 @@
 
 .low {
   background-color: green; 
+  color: white;
+  border-radius: 15%;
+  padding: 2px 8px;
+  font-weight: bold;
 }
 
 .moderate {
-  background-color: yellow;
+  background-color: rgb(245, 245, 96);
+  border-radius: 15%;
+  padding: 2px 8px;
+  font-weight: bold;
 }
 
 .high {
   background-color: orange;
+  color: white;
+  border-radius: 15%;
+  padding: 2px 8px;
+  font-weight: bold;
 }
 
 .very-high {
   background-color: red;
+  color: white;
+  border-radius: 15%;
+  padding: 2px 8px;
+  font-weight: bold;
+}
+
+.bg-light {
+  padding-left: 20px;
+}
+
+.dayForecast {
+  text-align: center;
 }
 

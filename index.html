@@ -41,68 +41,43 @@
         </form>
 
         <h5 class="justify-content-center pt-2 pl-3">Your previously searched cities: </h5>
-        <div class="container my-3 col-12" id="searched_cities_container">
+        <div class="container my-3 col-12" id="searchedCities">
         </div>
       </aside>
       <div class="col-8">
         <div class="today col-12">
           <div class="bg-light">
-            <h2 class="justify-content-center text-dark" id="cityName"></h2> 
+            <h2 class="justify-content-center text-dark" id="cityName">City Name and Date</h2>
             <div class="row">
               <div class="col-9">
-                <p id="todayTemp"></p>
-                <p id="todayHumid"></p>
-                <p id="todayWind"></p>
-                <span id="todayUV"></span>
-               </br>
+                <p id="todayTemp">Temperature: </p>
+                <p id="todayHumid">Humidity: </p>
+                <p id="todayWind">Wind Speed: </p>
+                <p> UV Index: <span class="badge" id="todayUV"></span> </p>
+                <p> </p>
               </div>
             </div>
           </div>
         </div>
         <div class="five-day bg-light">
           <div class="bg-light">
-            <h5 class="text-dark">Five Day Weather Forecast:</h5>
+            <h4 class="text-dark">Five Day Weather Forecast:</h4>
           </div>
           <div class="row justify-content-center">
-            <div id="day0" class="card-body mx-2 my-2">
-              <h5 id="0date"></h5>
-              <p id="0five_day_temp"></p>
-              <p id="0five_day_humidity"></p>
-              <img id="0five_day_icon" src="">
+          <div class="col dayForecast bg-primary text-white ml-3 rounded" id="1"></div>
+          <div class="col dayForecast bg-primary text-white ml-3 rounded" id="2"></div>
+          <div class="col dayForecast bg-primary text-white ml-3 rounded" id="3"></div>
+          <div class="col dayForecast bg-primary text-white ml-3 rounded" id="4"></div>
+          <div class="col dayForecast bg-primary text-white ml-3 rounded" id="5"></div>
             </div>
-            <div id="day1" class="card-body mx-2 my-2">
-              <h5 id="1date"></h5>
-              <p id="1five_day_temp"></p>
-              <p id="1five_day_humidity"></p>
-              <img id="1five_day_icon" src="">
-            </div>
-            <div id="day2" class="card-body mx-2 my-2">
-              <h5 id="2date"></h5>
-              <p id="2five_day_temp"></p>
-              <p id="2five_day_humidity"></p>
-              <img id="2five_day_icon" src="">
-            </div>
-            <div id="day3" class="card-body mx-2 my-2">
-              <h5 id="3date"></h5>
-              <p id="3five_day_temp"></p>
-              <p id="3five_day_humidity"></p>
-              <img id="3five_day_icon" src="">
-            </div>
-            <div id="day4" class="card-body mx-2 my-2">
-              <h5 id="4date"></h5>
-              <p id="4five_day_temp"></p>
-              <p id="4five_day_humidity"></p>
-              <img id="4five_day_icon" src="">
-            </div>
-          </div>
         </div>
       </div>
     </div>
   </div>
   <!-- Linking JQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- <!-- Linking moment js -->
- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <!-- Linking moment js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <!-- Linking my script file -->
   <script src="script.js"></script>
 
