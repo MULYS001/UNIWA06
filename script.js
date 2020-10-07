@@ -1,25 +1,39 @@
 
 // API Key and search variables
 var apiKey = "1458a78571c3d5ce768b8669f729341f";
-var searchTerm = "";
 var searchEl = $("#searchBtn");
-var searchHistory = JSON.parse(localStorage.getItem("search")) || [];
+var searchedCities = [];
 
 //on click event for search button --------------------//
 searchEl.on("click", function (event) {
   event.preventDefault();
-  searchTerm = $("#search-term").val();
-  searchHistory.push(searchTerm)
-  localStorage.setItem("search", JSON.stringify(searchHistory))
-  console.log(searchHistory)
-  currentWeather();
+  var searchTerm = $("#search-term").val();
+  searchedCities.push(searchTerm);
+  currentWeather(searchTerm);
+  refreshHistory();
 })
-//-----------------------------------------------------//
 
+// Function to refresh history and append as buttons on screen ------------------------------//
+function refreshHistory() {
+  $("#searchedCities").html("");
+  for (s = 0; s < searchedCities.length; s++) {
+    var newButton = $("<button>").attr("style", "width: 60%; margin: 2px; text-align: left;");
+    $("#searchedCities").append(newButton);
+    $("#searchedCities").append($("<br>"));
+    newButton.text(searchedCities[s]);
+    newButton.click(function () {
+      currentWeather($(this).text());
+    });
+  }; 
+}
+
+$(document).ready(function () {
+  refreshHistory();
+});
+//----------------------------------------------------------------------------------------//
 // Function to get weather forecast 
-function currentWeather() {
-  var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + searchTerm + "&appid=" + apiKey + "&units=metric"
-
+function currentWeather(city) {
+  var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=metric"
 
   // Ajax call to return values for weather forecast
   $.ajax({
@@ -81,14 +95,12 @@ function currentWeather() {
         }
         indexColor();
       }) //------------------------------------------------------------------------------------------------------------------------//
-      
+
       // ajax call for 5 day forecast ---------------------------------//
       $.ajax({
         url: forecastURL,
         method: "GET"
       }).then(function (response) {
-
-        var newCol = $("<div>")
 
         // function to set 5 day forecast 
         function forecast() {
@@ -99,7 +111,7 @@ function currentWeather() {
             //  forecast date
             var dateField = response.daily[i].dt * 1000;
             var simpleDate = moment(dateField).format("DD/MM/YYYY");
-            forecastDay.append(simpleDate).attr("bold");
+            forecastDay.append(simpleDate + "</br>").attr("bold");
 
             // weather icon
             var icon = (response.daily[i].weather[0].icon);
@@ -111,40 +123,19 @@ function currentWeather() {
             // temperature
             var forecastMax = response.daily[i].temp.max;
             var forecastMin = response.daily[i].temp.min;
-            forecastDay.append("Max: " + forecastMax + "</br>");
+            forecastDay.append("</br>" + "Max: " + forecastMax + "</br>");
             forecastDay.append("Min: " + forecastMin + "</br>");
 
             // humidity
             var forecastHumid = response.daily[i].humidity;
             forecastDay.append("Humidity: " + forecastHumid + "%" + "</br>");
-            forecastDay.append(newCol);
           }
         } forecast()
-      })
+      });
       //-------------------------------------------------------------//
     }
     uvIndexRating();
     renderMain();
+
   });
-
-  // Function to refresh history and append as buttons on screen ------------------------------//
-  function refreshHistory() {
-    $("#searchedCities").html("");
-    for (var s = 0; s = searchHistory.length; s++) {
-      var newButton = $("<button>");
-      newButton.text(searchedCities[s]);
-      newButton.click(function () {
-        loadCities($(this).text());
-      });
-      $("#searchedCities").append(newButton);
-    } refreshHistory()
-  }
-    //----------------------------------------------------------------------------------------//
 }
-
-
-
-
-
-
-
