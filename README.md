@@ -14,7 +14,7 @@ To fetch the weather details I used openweather.api, with several api calls for 
 [Note - API key has been published for marking purposes and will be removed once marked]
 
 #### My Weather Dashboard:
-![Weather_Dashboard](assets/Weather-1.jpg)
+![Weather_Dashboard](assets/Weather-1.png)
 
 ## User Story
 ```
