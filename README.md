@@ -1,9 +1,20 @@
 # 06 Server-Side APIs: Weather Dashboard
 
+#### https://mulys001.github.io/Weather-Dashboard
+
 Developers are often tasked with retrieving data from another application's API and using it in the context of their own. 
 Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. 
 
 My challenge was to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
+
+For this development project I used a combination of html and javascript, utilising JQuery and Moment.js script libraries
+and Bootstrap and fontawesome for styling.
+
+To fetch the weather details I used openweather.api, with several api calls for the required details to be populated.
+[Note - API key has been published for marking purposes and will be removed once marked]
+
+#### My Weather Dashboard:
+![Weather_Dashboard](assets/Weather-1.jpg)
 
 ## User Story
 ```
@@ -27,4 +38,6 @@ WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 WHEN I open the weather dashboard
 THEN I am presented with the last searched city forecast
+
+
 ```
